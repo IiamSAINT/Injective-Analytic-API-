@@ -147,7 +147,7 @@ GET /api/v1/analytics/overview
 ### Option 1: Local Development
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/inj_API.git
+git clone https://github.com/IiamSAINT/inj_API.git
 cd inj_API
 
 python -m venv venv && source venv/bin/activate
@@ -296,6 +296,6 @@ MIT — Use it freely in your projects.
 
 **Built with ❤️ for the Injective Ecosystem**
 
-[Documentation](http://localhost:8000/docs) · [Report Bug](https://github.com/YOUR_USERNAME/inj_API/issues) · [Request Feature](https://github.com/YOUR_USERNAME/inj_API/issues)
+[Documentation](http://localhost:8000/docs) · [Report Bug](https://github.com/IiamSAINT/inj_API/issues) · [Request Feature](https://github.com/IiamSAINT/inj_API/issues)
 
 </div>
