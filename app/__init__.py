@@ -1,3 +1,3 @@
 """
-Injective Market Intelligence API
+Injective Market & Network Data API
 """

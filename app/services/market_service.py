@@ -3,6 +3,7 @@ Market Service - Business logic for market data processing
 """
 from datetime import datetime, timezone
 from typing import List, Optional, Tuple
+import logging
 import re
 
 from app.services.injective_client import get_injective_client
@@ -11,6 +12,8 @@ from app.models.market import (
     MarketsResponse
 )
 from app.utils.cache import cached_market
+
+logger = logging.getLogger(__name__)
 
 
 def parse_denom_to_symbol(denom: str) -> str:
@@ -96,7 +99,7 @@ class MarketService:
                 )
                 markets.append(summary)
             except Exception as e:
-                print(f"Error processing spot market: {e}")
+                logger.warning("Error processing spot market: %s", e)
                 continue
         
         # Process derivative markets
@@ -120,7 +123,7 @@ class MarketService:
                 )
                 markets.append(summary)
             except Exception as e:
-                print(f"Error processing derivative market: {e}")
+                logger.warning("Error processing derivative market: %s", e)
                 continue
         
         return MarketsResponse(

@@ -1,5 +1,5 @@
 """
-Injective Market Intelligence API - Configuration
+Injective Market & Network Data API - Configuration
 """
 from functools import lru_cache
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -9,8 +9,8 @@ class Settings(BaseSettings):
     """Application settings loaded from environment variables."""
     
     # API Info
-    api_title: str = "Injective Market Intelligence API"
-    api_description: str = "A developer-focused REST API for Injective market data and analytics"
+    api_title: str = "Injective Market & Network Data API"
+    api_description: str = "REST API for Injective Protocol market data, analytics, and network economics"
     api_version: str = "1.0.0"
     debug: bool = True
     
@@ -24,6 +24,11 @@ class Settings(BaseSettings):
     # Cache TTL (seconds)
     market_cache_ttl: int = 10
     analytics_cache_ttl: int = 30
+    
+    # Supply Constants
+    inj_initial_supply: float = 100_000_000
+    inj_decimals: int = 18
+    inj_burn_address: str = "inj1qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqe2hm49"
     
     model_config = SettingsConfigDict(
         env_file=".env",
