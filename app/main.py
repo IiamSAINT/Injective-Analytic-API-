@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import get_settings
-from app.routers import markets, analytics, health, ninja, premium, supply
+from app.routers import markets, analytics, health, ninja, premium, supply, wallet
 
 settings = get_settings()
 
@@ -35,6 +35,7 @@ app.include_router(analytics.router, prefix="/api/v1", tags=["Analytics"])
 app.include_router(ninja.router, prefix="/api/v1", tags=["Ninja Analytics"])
 app.include_router(premium.router, prefix="/api/v1", tags=["Premium (Gated)"])
 app.include_router(supply.router, prefix="/api/v1", tags=["Supply & Economics"])
+app.include_router(wallet.router, prefix="/api/v1", tags=["Wallet Conversion"])
 
 
 @app.get("/", tags=["Root"])

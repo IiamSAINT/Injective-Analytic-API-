@@ -98,6 +98,19 @@ High-value data for subscribers
 
 </td>
 </tr>
+<tr>
+<td width="50%">
+
+### 🔄 Wallet Conversion
+Cross-chain address conversion
+- EVM (0x) ↔ Injective (inj1)
+- Any Cosmos bech32 → Injective
+- Batch conversion (up to 50)
+
+</td>
+<td width="50%">
+</td>
+</tr>
 </table>
 
 ---
@@ -167,6 +180,15 @@ docker run -p 8000:8000 injective-api
 |----------|-------------|
 | `GET /analytics/ninja/active` | Top active addresses |
 | `GET /analytics/ninja/check/{addr}` | Check address tags/labels |
+
+### Wallet Conversion
+
+| Endpoint | Description |
+|----------|-------------|
+| `GET /wallet/convert/{address}` | Auto-detect & convert any address |
+| `POST /wallet/convert/batch` | Batch convert up to 50 addresses |
+| `GET /wallet/convert/evm-to-inj/{address}` | Explicit EVM → INJ |
+| `GET /wallet/convert/inj-to-evm/{address}` | Explicit INJ → EVM |
 
 ### Premium (API Key Required)
 

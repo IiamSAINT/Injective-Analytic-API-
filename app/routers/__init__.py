@@ -1,1 +1,1 @@
-from . import markets, analytics, health, ninja, premium, supply
+from . import markets, analytics, health, ninja, premium, supply, wallet
